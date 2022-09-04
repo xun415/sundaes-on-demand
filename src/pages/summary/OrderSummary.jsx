@@ -6,7 +6,7 @@ function OrderSummary(props) {
         <div>
             {/*<h1>Order Summary</h1>*/}
             {/*<section className={'mt-3'}>*/}
-            {/*    <h2>Scoops: $6.00</h2>*/}
+            {/*    <h2>ScoopOption: $6.00</h2>*/}
             {/*    <li>3 Vanilla</li>*/}
             {/*</section>*/}
             {/*<section className={'mt-3'}>*/}
