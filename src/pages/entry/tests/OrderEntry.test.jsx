@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import {render, screen, waitFor} from "@testing-library/react";
 import OrderEntry from "../OrderEntry";
 import {rest} from "msw";
 import {server} from "../../../mocks/server";
@@ -16,8 +16,16 @@ test('handles errors for scoops and toppings routes', async () => {
 
     render(<OrderEntry />)
 
-    const alert = await screen.findAllByRole('alert', { name: 'An unexpected error ocurred. Please try again later.' })
+    await waitFor(async () => {
+        const alert = await screen.findAllByRole('alert')
+        expect(alert).toHaveLength(2)
+    })
 
-    expect(alert).toHaveLength(2)
 
 })
+
+// skip할 테스트
+// test.skip('', () => {})
+
+// 단독실행(나머지 스킵)
+// test.only('ㅋ', () => {})
